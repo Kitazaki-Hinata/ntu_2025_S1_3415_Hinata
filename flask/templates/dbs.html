@@ -1,15 +1,13 @@
-index.html
+dbs.html
 <head>
     <meta name ="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
 </head>
 <body>
     <div class="container">
-        <h2>Welcome to 3415 Web App</h2>
-        <h4>Please enter your name : </h4>
+        <h2>The predicted dbs price is {{r}}</h2>
         <form action="/main" method="POST">
-            <input type="text" name="q">
-            <input type="submit" value="Enter">
+            <input type="submit" value="Main">
         </form>
     </div>
 </body>

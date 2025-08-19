@@ -1,17 +1,15 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    </head>
-    <body>
-        <div class="container">
-            <h2>Welcome to 3415 web</h2>
-            <h4>Please enter your name : </h4>
-            <form action="/main" method="POST">
-                <input type="text" name="q">
-                <input type="submit" value="enter">
-            </form>  <!-- 添加闭合标签 -->
-        </div>
-    </body>
-</html>
+main.html
+<head>
+    <meta name ="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+</head>
+<body>
+    <div class="container">
+        <h2>Main</h2>
+        <h4>Please enter exchange rate : </h4>
+        <form action="/dbs" method="POST">
+            <input type="number" step="0.01" name="q">
+            <input type="submit" value="Enter">
+        </form>
+    </div>
+</body>

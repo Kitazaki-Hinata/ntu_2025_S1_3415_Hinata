@@ -12,19 +12,21 @@ app = Flask(__name__)
 #     print("Hello")
 #     return "Hello World"
 
-@app.route(      "/",
-    methods=["GET", "POST"])
-    # route是路由，将URL: / 映射到home函数（默认）
-    # @app.route('/about')   这个是映射到about函数上
-
+@app.route("/",methods=["GET","POST"])
 def index():
-    return render_template("index.html")
+    return(render_template("index.html"))
 
-@app.route("/main", methods=["GET", "POST"])
+@app.route("/main",methods=["GET","POST"])
 def main():
-    return render_template("main.html")
+    #database
+    return(render_template("main.html"))
 
+@app.route("/dbs",methods=["GET","POST"])
+def dbs():
+    q = float(request.form.get("q"))
+    return(render_template("dbs.html",r=(-50.6*q)+90.2))
 
-if __name__ == '__main__':
-    app.run(debug=True, port = 5001)
+if __name__ == "__main__":
+    app.run(port = 5001)
+
 
